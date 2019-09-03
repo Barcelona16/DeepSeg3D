@@ -1,6 +1,6 @@
 [dataset]
-in_path = ../Dataset/Bullitt_Isotrope_light/MRA/
-gd_path = ../Dataset/Bullitt_Isotrope_light/GD/
+in_path = ../Bullitt_Isotrope_light/MRA/
+gd_path = ../Bullitt_Isotrope_light/GD/
 train   = 38
 valid   = 2
 test    = 2

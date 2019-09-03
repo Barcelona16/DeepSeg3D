@@ -298,7 +298,7 @@ class DeepSeg3D:
 # ----- DeepSeg3D instantiation -----
 if __name__ == '__main__':
     # Only show one GPU
-    # os.environ['CUDA_VISIBLE_DEVICES'] = '2'
+    os.environ['CUDA_VISIBLE_DEVICES'] = ''
 
     # TRAIN
     if (len(sys.argv) == 2):
