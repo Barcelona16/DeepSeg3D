@@ -333,6 +333,7 @@ if __name__ == '__main__':
         # Check if config filename exist
         config_filename = sys.argv[1]
         model_filename = sys.argv[2]
+        print(os.path)
         if (not os.path.isfile(config_filename)):
             sys.exit("FATAL ERROR: configuration file doesn't exists")
         if (not os.path.isfile(model_filename)):
