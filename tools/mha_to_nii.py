@@ -33,4 +33,4 @@ for path, subdirs, files in os.walk(input_folder):
             image = sitk.ReadImage(input_file)
             sitk.WriteImage(image, output_file)
 
-            print(input_file, "->", output_file, '✓')
+            print(input_file, "->", output_file, 'yes')
