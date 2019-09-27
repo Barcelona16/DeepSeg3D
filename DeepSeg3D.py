@@ -271,7 +271,7 @@ class DeepSeg3D:
                                                        self.patchs_size[1], self.patchs_size[2])
                 patchs_gd = reshapeDataset(patchs_gd)
                 print("here1")
-                print(self.model.evaluate(patchs_in, patchs_gd))
+                #print(self.model.evaluate(patchs_in, patchs_gd))
                 prediction = self.model.predict(patchs_in)
                 print("here2")
                 label_selector = [slice(None)] + [
@@ -279,11 +279,12 @@ class DeepSeg3D:
                                  [slice(int(self.patchs_size[1] / 4), int(3 * (self.patchs_size[1] / 4)))] + \
                                  [slice(int(self.patchs_size[2] / 4), int(3 * (self.patchs_size[2] / 4)))] + [
                                      slice(None)]
+                print(prediction)
                 prediction = prediction[label_selector]
                 print(prediction.shape,prediction.size)
 
                 segmentation = fullPatchsToImage(self.test_in[count], prediction)
-                print(prediction.size())
+
                 print(str(count + 1) + '/' + str(self.dataset_size[2]))
                 npToNiiAffine(segmentation, getAffine(self.in_path),
                               (str(count + 1).zfill(2) + ".nii.gz"))
