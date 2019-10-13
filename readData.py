@@ -22,7 +22,7 @@ path = '01.nii' #数据所在路径
 data = read_img(path)
 idx=data<0.9
 data[idx]=0.0
-print(data)
+#print(data)
 out = sitk.GetImageFromArray(data)
 sitk.WriteImage(out,'simpleitk_save.nii')
 
