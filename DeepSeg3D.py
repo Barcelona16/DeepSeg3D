@@ -271,8 +271,9 @@ class DeepSeg3D:
                                                        self.patchs_size[1], self.patchs_size[2])
                 patchs_gd = reshapeDataset(patchs_gd)
                 print("here1")
-                #print(self.model.evaluate(patchs_in, patchs_gd))
-                prediction = self.model.predict(patchs_in)
+                print(self.model.evaluate(patchs_in, patchs_gd))
+                ijust=wannaquit
+                #prediction = self.model.predict(patchs_in)
                 print("here2")
                 label_selector = [slice(None)] + [
                     slice(int(self.patchs_size[0] / 4), int(3 * (self.patchs_size[0] / 4)))] + \

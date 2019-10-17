@@ -9,7 +9,9 @@ import os
 import sys
 import nibabel as nib
 import numpy as np
-from matplotlib import pyplot
+import matplotlib
+matplotlib.use('TkAgg')
+import matplotlib.pyplot as pyplot
 from sklearn.metrics import roc_curve, roc_auc_score, precision_recall_curve, average_precision_score, \
     jaccard_similarity_score, f1_score
 
