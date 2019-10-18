@@ -1,0 +1,7 @@
+1 anaconda  conda create Python35 选择python版本为3.5 创建一个虚拟环境
+2 下载requirements 里面的 包  pip install 包名   gpu版本的tensorflow
+切换环境 conda activate Python35
+3 修改 config.txt 
+patch_size
+4 训练 python DeepSeg3D.py config.txt
+5 预测 python DeepSeg3D.py config.txt 模型地址   models/model-best.h5 
