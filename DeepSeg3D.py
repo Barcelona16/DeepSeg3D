@@ -13,6 +13,7 @@ import tensorflow as tf
 import tensorboard as tb
 from keras.optimizers import Adam
 from keras.callbacks import TensorBoard, CSVLogger, ModelCheckpoint
+from keras.utils import plot_model
 from keras import backend as K, models
 
 from utils.io.write import npToNiiAffine
@@ -209,6 +210,7 @@ class DeepSeg3D:
         # self.model = custom_model_2(self.patchs_size[0], self.patchs_size[1], self.patchs_size[2])
         # self.model = unet_exp_3(self.patchs_size[0], self.patchs_size[1], self.patchs_size[2])
         self.model = unet_exp_4()
+        plot_model(self.model,to_file='model.png')
         self.model.compile(loss=dice_loss, optimizer=Adam(lr=1e-4),
                       metrics=[sensitivity, specificity, precision])
 
